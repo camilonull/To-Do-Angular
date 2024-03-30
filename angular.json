@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "To-Do": {
+    "to-do": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -44,8 +44,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "700kb",
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "To-Do:build:production"
+              "buildTarget": "to-do:build:production"
             },
             "development": {
-              "buildTarget": "To-Do:build:development"
+              "buildTarget": "to-do:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "To-Do:build"
+            "buildTarget": "to-do:build"
           }
         },
         "test": {

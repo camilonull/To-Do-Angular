@@ -1,0 +1,16 @@
+#popup-modal {
+    width: 90%; /* Ajusta la anchura según sea necesario */
+    max-width: 400px; /* Ancho máximo del modal */
+    height: auto; /* Altura automática */
+    top: 50%; /* Posición desde la parte superior */
+    left: 50%; /* Posición desde la izquierda */
+    transform: translate(-50%, -50%); /* Centrar el modal tanto horizontal como verticalmente */
+  }
+
+  .svg-icon {
+    stroke: rgb(41, 85, 23); /* Cambia el color del SVG aquí */
+  }
+
+  .svg-icon:hover{
+    stroke: rgb(113, 0, 0); /* Cambia el color del SVG aquí */
+  }

@@ -1,0 +1,119 @@
+
+<div class="flex items-center justify-center h-screen mt-10 lg:mt-0">
+  <div
+    class="w-[20rem] sm:w-[33rem] lg:w-[55rem] mx-auto my-auto rounded-2xl overflow-hidden shadow-2xl shadow-black/50"
+  >
+    <div class="flex flex-col lg:flex-row bg-[#CCF993]">
+      <div class="flex flex-col justify-around mx-5 lg:w-1/2 lg:mx-2">
+        <input
+          class="px-4 w-full sm: py-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-500 shadow-md shadow-black/50 mt-10"
+          type="text"
+          placeholder="Usuario/Correo"
+          [(ngModel)]="username"
+          name="username"
+        />
+        <div class="relative">
+          <input
+            #passwordInput
+            id="password"
+            class="pl-4 my-5 md:my-5 lg:m-0 w-full py-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-500 shadow-md shadow-lime-900/50"
+            type="password"
+            placeholder="Contraseña"
+            [(ngModel)]="password"
+            name="password"
+          />
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+            (click)="togglePasswordVisibility(passwordInput)"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-eye"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+              <path
+                d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"
+              />
+            </svg>
+          </div>
+        </div>
+        <Button
+          class="font-bold py-2 px-4 rounded-full text-white bg-[#577B59] hover:bg-green-500"
+          (click)="temporal()"
+          >Iniciar Sesion</Button
+        >
+        <div *ngIf="mensaje" class="mensaje text-red-500 text-center">
+          {{ mensaje }}
+        </div>
+        <Button
+          class="hover:bg-blue-700 font-bold py-[8px]  my-5 lg:my-0 rounded-full text-black hover:text-white text-xs"
+          (click)="register()"
+          >Registrarme</Button
+        >
+        <Button
+        (click)="closeModal()"
+          class="hover:bg-blue-400 font-bold py-[8px]  rounded-full text-red-800 hover:text-white text-lg"
+          >Importante Leer</Button
+        >
+      </div>
+      <div class="flex col-auto  lg:w-1/2 justify-end">
+        <img
+          class="rounded-2xl border-solid w-full border-black border-[1px]"
+          src="/assets/fondologin.jpeg"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="modalActive" id="default-modal" tabindex="-1" aria-hidden="true" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-4 w-full max-w-2xl max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <!-- Modal header -->
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Terms of Service
+              </h3>
+              <button type="button" (click)="closeModal()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+              </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-4 md:p-5 space-y-4">
+              <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-ellipsis">
+                  Esta es la version 1.0, de la aplicacion Super Taks, para cualquier, error que encuentres o recomendaciones hacia a la aplicacion. Recomendado enviar cualquier cosa al siguiente correo
+              </p>
+              <p class="text-base leading-relaxe text-red-400">
+                  20camilovargas19&#64;gmail.com
+              </p>
+              <p class="text-white text-pretty">
+                  Si aparece errores visuales, se recomienda tomar pantallazos, para su futura correciones. O bueno antes de que las lokas de Google me tuven los benditos servidores donde anda toda la informacion XDDDD 
+
+                 
+              </p>
+              <p class="text-red-500"> Posdata: Al final si las lokas de google si me tumbaron todo, me toco cambiar toda la base de datos</p>
+              <p class="text-white text-pretty">Por ahora el inicio de sesion ni anda, ni lo del registro de usuarios. Las tareas estan compartidas para todo aquel que tenga la pagina web. La siguente update es tener el sistema de autenticacion, para que cada usuario tenga sus propias tareas. </p>
+              <h1 class="text-center text-slate-400">CULPA DE PETROOO (google y strapi y su kk de ssl sin https)</h1>
+          </div>
+          <!-- Modal footer -->
+          <div (click)="closeModal()" class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
+              
+          </div>
+      </div>
+  </div>
+</div>
