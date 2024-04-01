@@ -34,17 +34,14 @@ temporal(){
   closeModal(){
     this.modalActive = !this.modalActive;
   }
-/*
+
   login(){
     if(this.authService.login(this.username,this.password)){
       this.mensaje = 'Inicio de sesión exitoso';
+      this.router.navigateByUrl('mainPage');
     }else{
       this.mensaje = 'Usuario o contraseña incorrectos';
     }
-    //this.router.navigateByUrl('mainPage');
-  }
-*/
-  register(){
-    this.router.navigateByUrl('register');
+    
   }
 }

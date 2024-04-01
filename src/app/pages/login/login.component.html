@@ -1,14 +1,16 @@
 
-<div class="flex items-center justify-center h-screen mt-10 lg:mt-0">
+<div class="flex flex-col justify-center h-screen">
+  <h1 class="text-center mt-5 sm:mt-7 lg:mt-11 sm:text-2xl lg:text-4xl">SuperTask 🥶</h1>
   <div
-    class="w-[20rem] sm:w-[33rem] lg:w-[55rem] mx-auto my-auto rounded-2xl overflow-hidden shadow-2xl shadow-black/50"
+    class="w-[19rem] sm:w-[33rem] lg:w-[55rem] mx-auto my-auto rounded-2xl overflow-hidden shadow-2xl shadow-black/50 mt-7 sm:mt-10 lg:mt-20"
   >
+
     <div class="flex flex-col lg:flex-row bg-[#CCF993]">
       <div class="flex flex-col justify-around mx-5 lg:w-1/2 lg:mx-2">
         <input
           class="px-4 w-full sm: py-2 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-500 shadow-md shadow-black/50 mt-10"
           type="text"
-          placeholder="Usuario/Correo"
+          placeholder="Usuario"
           [(ngModel)]="username"
           name="username"
         />
@@ -47,21 +49,17 @@
         </div>
         <Button
           class="font-bold py-2 px-4 rounded-full text-white bg-[#577B59] hover:bg-green-500"
-          (click)="temporal()"
+          (click)="login()"
           >Iniciar Sesion</Button
         >
         <div *ngIf="mensaje" class="mensaje text-red-500 text-center">
           {{ mensaje }}
         </div>
-        <Button
-          class="hover:bg-blue-700 font-bold py-[8px]  my-5 lg:my-0 rounded-full text-black hover:text-white text-xs"
-          (click)="register()"
-          >Registrarme</Button
-        >
+        
         <Button
         (click)="closeModal()"
           class="hover:bg-blue-400 font-bold py-[8px]  rounded-full text-red-800 hover:text-white text-lg"
-          >Importante Leer</Button
+          >Informacion Actualizada</Button
         >
       </div>
       <div class="flex col-auto  lg:w-1/2 justify-end">
@@ -95,23 +93,19 @@
           <!-- Modal body -->
           <div class="p-4 md:p-5 space-y-4">
               <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-ellipsis">
-                  Esta es la version 1.0, de la aplicacion Super Taks, para cualquier, error que encuentres o recomendaciones hacia a la aplicacion. Recomendado enviar cualquier cosa al siguiente correo
+                  Esta es la version 1.1, de la aplicacion Super Taks, para cualquier, error que encuentres o recomendaciones hacia a la aplicacion al siguiente correo.
               </p>
               <p class="text-base leading-relaxe text-red-400">
                   20camilovargas19&#64;gmail.com
               </p>
               <p class="text-white text-pretty">
-                  Si aparece errores visuales, se recomienda tomar pantallazos, para su futura correciones. O bueno antes de que las lokas de Google me tuven los benditos servidores donde anda toda la informacion XDDDD 
-
-                 
+                  Al final analice y pues como tal solo tu usarias mi aplicacion, entonces no tendria que hacer todo un sistema tan complejo de autenticacion de usuarios. Por ahora te asignare un usuario, solo por si cae el link de la pagina a otra persona no pueda acceder tan facil.
               </p>
-              <p class="text-red-500"> Posdata: Al final si las lokas de google si me tumbaron todo, me toco cambiar toda la base de datos</p>
-              <p class="text-white text-pretty">Por ahora el inicio de sesion ni anda, ni lo del registro de usuarios. Las tareas estan compartidas para todo aquel que tenga la pagina web. La siguente update es tener el sistema de autenticacion, para que cada usuario tenga sus propias tareas. </p>
-              <h1 class="text-center text-slate-400">CULPA DE PETROOO (google y strapi y su kk de ssl sin https)</h1>
+            
           </div>
           <!-- Modal footer -->
           <div (click)="closeModal()" class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-              <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
+              <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Si 🤠</button>
               
           </div>
       </div>

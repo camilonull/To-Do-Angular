@@ -11,16 +11,15 @@ export class AuthService {
 
   constructor(private router: Router) { }
 
-  private username: string = "No debes estar aca";
+  private username: string = "cata";
+  password: string = "30533"
   tokenResp = null;
 
   closeSesion(){
-    localStorage.setItem('token', "");
     this.router.navigateByUrl('login');
-    this.deleteUser();
   }
 
-  deleteUser(){
-    localStorage.setItem('user', "No debes estar aca");
+  login(username: string, password: string): boolean {
+    return username === this.username && password === this.password;
   }
 }

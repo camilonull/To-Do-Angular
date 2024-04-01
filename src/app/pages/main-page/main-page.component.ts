@@ -24,7 +24,7 @@ export class MainPageComponent implements OnInit {
   updatedStatus: number = 0;
   updatedDescription: string = '';
 
-  usernameF: string = 'No debes estar aca';
+  usernameF: string = 'Cata 😬';
 
   constructor(
     private http: HttpClient,
@@ -36,7 +36,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     //this.updateList();
-    this.usernameF = localStorage.getItem('user') || 'No debes estar aqui';
   }
 
   createTask(): TaskModel {

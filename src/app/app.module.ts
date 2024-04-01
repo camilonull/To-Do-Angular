@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
@@ -19,8 +18,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
   declarations: [
     AppComponent,
     LoginComponent,
-    MainPageComponent,
-    RegisterComponent
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
