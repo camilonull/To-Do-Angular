@@ -1,7 +1,11 @@
+
 <div class="lg:w-[900px] sm:w-[550px] w-[320px] pt-10">
-  <header class="text-2xl sm:text-4xl w-auto items-center text-center">
-    Que voy a hacer hoy 🤔
-  </header>
+ 
+  <header class="text-2xl sm:text-4xl w-auto items-center text-center flex justify-center">
+    <span class="mr-2 lg:mr-5">Que voy a hacer hoy</span>
+    <img src="/assets/thinking-emoji.gif" class="size-8 lg:size-12" alt="GIF animado">
+</header>
+
   <div class="relative">
     <button
     type="button"
@@ -27,6 +31,7 @@
       />
     </svg>
   </button>
+  
   <div *ngIf="dropdownOpen" class="absolute flex flex-col right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-md z-10 text-center">
     <button
             class="btn text-white bg-green-500 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
@@ -55,7 +60,11 @@
      (click)="addTask()"
       >Agregar</Button
     >
-  </div>
+  </div>  
+  <div class="items-center mt-2">
+    <app-calendar />
+
+  </div>  
   <div *ngIf="dataLoaded" class="pb-8">
     <div class="bg-[#CCF993]  md:mx-auto mt-5 rounded-lg border-solid border-black border p-5 shadow-md shadow-black/50 ">
       <h2 class="text-center text-2xl lg:text-4xl font-extrabold text-green-800">Tareas :3</h2>
@@ -129,6 +138,8 @@
       </div>
     </div>
   </div>
+  
+  
 </div>
 
 <div

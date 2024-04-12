@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { TaksService } from '../../service/taks.service';
 import TaskModel from '../../model/TaskModel';
 import { AuthService } from '../../service/auth.service';
@@ -27,7 +26,6 @@ export class MainPageComponent implements OnInit {
   usernameF: string = 'Cata 😬';
 
   constructor(
-    private http: HttpClient,
     private taskService: TaksService,
     private authService: AuthService
   ) {
@@ -95,7 +93,8 @@ export class MainPageComponent implements OnInit {
   updateList() {
     this.taskService.getTask().subscribe((resp) => {
       if (resp) {
-        this.tasks = resp.sort((a, b) => a.status - b.status);;
+        console.log(resp);
+        this.tasks = resp.sort((a, b) => a.status - b.status);
         this.dataLoaded = true;
       }
     });
